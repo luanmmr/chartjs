@@ -9,8 +9,11 @@ export default class ChartCasamentoMes extends Component {
         super(props);
         this.state = {
             chartData: {
-                labels: '',
-                datasets: []
+                labels: ["Clássico", "Moderno", "Rústico"],
+                datasets: [{
+                            data: [1, 1, 1],
+                            backgroundColor: ['rgb(255, 99, 132)', 'rgb(50, 10, 100)', 'rgb(10, 100, 100)']
+                          }]
             },
             mes: ''
         }

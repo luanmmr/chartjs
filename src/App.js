@@ -4,6 +4,7 @@ import moment from 'moment';
 import ChartUsuariosMes from './components/ChartUsuariosMes';
 import ChartCasamentoMes from './components/ChartCasamentoMes';
 import ChartAgendamentoMes from './components/ChartAgendamentoMes';
+import ChartVendasMes from './components/ChartVendasMes';
 
 export default class App extends Component {
   /*constructor(props){
@@ -42,6 +43,7 @@ export default class App extends Component {
         <ChartUsuariosMes /*users={users}*/ />
         <ChartCasamentoMes />
         <ChartAgendamentoMes />
+        <ChartVendasMes />
       </div>
     );
   }
