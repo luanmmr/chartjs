@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2';
+import React, {Component, Fragment} from 'react';
+import {Bar} from 'react-chartjs-2';
 import api from '../services/api';
 import moment from 'moment';
 import { Container } from './styles';
+import Axios from "axios";
 
 export default class ChartAgendamentoMes extends Component {
     constructor(props){
@@ -67,12 +68,14 @@ export default class ChartAgendamentoMes extends Component {
             chartData: {
                          labels: meses,
                          datasets: [{
-                                      label: `Agendamentos`,
+                                      label: `Agendamentos Totais`,
                                       data: results,
-                                      backgroundColor: ['rgb(255, 99, 132)', 'rgb(50, 10, 100)', 'rgb(10, 100, 100)',
-                                                        'rgb(10, 100, 170)', 'rgb(120, 25, 170)', 'rgb(180, 120, 10)',
-                                                        'rgb(1, 120, 10)', 'rgb(255, 99, 132)', 'rgb(50, 10, 100)',
-                                                        'rgb(10, 100, 100)', 'rgb(10, 100, 2)', 'rgb(120, 25, 170)']
+                                      backgroundColor: ['rgb(231,46,86)', 'rgb(231,46,86)', 'rgb(231,46,86)',
+                                                        'rgb(231,46,86)', 'rgb(231,46,86)', 'rgb(231,46,86)',
+                                                        'rgb(231,46,86)', 'rgb(231,46,86)', 'rgb(231,46,86)',
+                                                        'rgb(231,46,86)', 'rgb(231,46,86)', 'rgb(231,46,86)'
+
+                                      ],
                                    }]
                         }
         })
@@ -120,7 +123,19 @@ export default class ChartAgendamentoMes extends Component {
                 </select>
                 <Bar
                   data={this.state.chartData}
-                  options={{ maintainAspectRatio: false }}
+                  options={{
+
+                      title: {
+                          display: true,
+                          text: 'Agendamentos',
+                          fontSize: 25
+                      },
+                      legend:{
+                          display: true,
+                          position:'top',
+
+                      }
+                  }}
                 />
                 </Container>
             </div>
