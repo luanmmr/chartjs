@@ -17,8 +17,7 @@ export default class App extends Component {
     } 
   }*/
   componentDidMount(){
-    let mes = moment().year("2020").month("7").date("15");
-    console.log(mes.isSame("2020-8", 'month'));
+
   }
   /*
   async componentDidMount(){
