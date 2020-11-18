@@ -35,10 +35,12 @@ export default class ChartUsuariosMes extends Component {
                          datasets: [{
                                       label: 'Usuários Cadastrados',
                                       data: mensais,
-                                      backgroundColor: ['rgb(234,128,121,1)', 'rgb(104,191,183)', 'rgb(24,86,81)',
-                                                        'rgb(231,46,86)', 'rgb(234,128,121,1)', 'rgb(104,191,183)',
-                                                        'rgb(24,86,81)', 'rgb(231,46,86)', 'rgb(234,128,121,1)',
-                                                        'rgb(104,191,183)', 'rgb(24,86,81)', 'rgb(231,46,86)']
+                                      backgroundColor: ['rgb(24,86,81)','rgb(24,86,81)','rgb(24,86,81)',
+                                                        'rgb(24,86,81)','rgb(24,86,81)','rgb(24,86,81)',
+                                                        'rgb(24,86,81)','rgb(24,86,81)','rgb(24,86,81)',
+                                                        'rgb(24,86,81)','rgb(24,86,81)','rgb(24,86,81)'
+
+                                      ]
                                    }]
                         }
         })
