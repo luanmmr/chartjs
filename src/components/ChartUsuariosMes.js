@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Pie } from 'react-chartjs-2';
+import {HorizontalBar} from 'react-chartjs-2';
 import api from '../services/api';
 import moment from 'moment';
 import { Container } from './styles';
@@ -33,11 +33,11 @@ export default class ChartUsuariosMes extends Component {
             chartData: {
                          labels: this.state.meses,
                          datasets: [{
-                                      label: 'Criados no Mês',
+                                      label: 'Usuários Criados',
                                       data: mensais,
-                                      backgroundColor: ['rgb(255, 99, 132)', 'rgb(50, 10, 100)', 'rgb(10, 100, 100)',
-                                                        'rgb(10, 100, 170)', 'rgb(120, 25, 170)', 'rgb(180, 120, 10)',
-                                                        'rgb(1, 120, 10)', 'rgb(255, 99, 132)', 'rgb(50, 10, 100)',
+                                      backgroundColor: ['rgb(234,128,121,1)', 'rgb(104,191,183)', 'rgb(24,86,81)',
+                                                        'rgb(231,46,86)', 'rgb(154,14,222)', 'rgb(233,152,9)',
+                                                        'rgb(57,164,246)', 'rgb(255, 99, 132)', 'rgb(50, 10, 100)',
                                                         'rgb(10, 100, 100)', 'rgb(10, 100, 2)', 'rgb(120, 25, 170)']
                                    }]
                         }
@@ -49,9 +49,23 @@ export default class ChartUsuariosMes extends Component {
         return (
             <div>
                 <Container>
-                <Pie
+                <HorizontalBar
                   data={this.state.chartData}
-                  options={{ maintainAspectRatio: false }}
+                  options={{
+
+
+
+                      title: {
+                          display: true,
+                          text: 'Usuários',
+                          fontSize: 25
+                      },
+                      legend:{
+                          display: true,
+                          position:'top',
+
+                      }
+                  }}
                 />
                 </Container>
             </div>
