@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import ChartUsuariosMes from './components/ChartUsuariosMes';
 import ChartCasamentoMes from './components/ChartCasamentoMes';
+import ChartAgendamentoMes from './components/ChartAgendamentoMes';
 
 export default class App extends Component {
   /*constructor(props){
@@ -15,8 +16,8 @@ export default class App extends Component {
     } 
   }*/
   componentDidMount(){
-    let mes = moment().days(0);
-    console.log(mes);
+    let mes = moment().year("2020").month("7").date("15");
+    console.log(mes.isSame("2020-8", 'month'));
   }
   /*
   async componentDidMount(){
@@ -40,6 +41,7 @@ export default class App extends Component {
       <div className="App">
         <ChartUsuariosMes /*users={users}*/ />
         <ChartCasamentoMes />
+        <ChartAgendamentoMes />
       </div>
     );
   }
