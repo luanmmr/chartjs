@@ -49,7 +49,9 @@ export default class ChartUsuariosMes extends Component {
         return (
             <div>
                 <Container>
+
                 <HorizontalBar
+
                   data={this.state.chartData}
                   options={{
 
