@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  Pie } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import api from '../services/api';
 import moment from 'moment';
 import { Container } from './styles';
@@ -49,7 +49,7 @@ export default class ChartUsuariosMes extends Component {
         return (
             <div>
                 <Container>
-                <Pie
+                <Bar
                   data={this.state.chartData}
                   options={{ maintainAspectRatio: false }}
                 />
