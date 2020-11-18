@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bar } from 'react-chartjs-2';
+import {Doughnut, Pie} from 'react-chartjs-2';
 import api from '../services/api';
 import moment from 'moment';
 import { Container } from './styles';
@@ -35,12 +35,9 @@ export default class ChartCasamentoMes extends Component {
             chartData: {
                          labels: ["Clássico", "Moderno", "Rústico"],
                          datasets: [{
-                                      label: `Casamentos ${mes}`,
+                                      label: `Período ${mes}`,
                                       data: estilo,
-                                      backgroundColor: ['rgb(255, 99, 132)', 'rgb(50, 10, 100)', 'rgb(10, 100, 100)',
-                                                        'rgb(10, 100, 170)', 'rgb(120, 25, 170)', 'rgb(180, 120, 10)',
-                                                        'rgb(1, 120, 10)', 'rgb(255, 99, 132)', 'rgb(50, 10, 100)',
-                                                        'rgb(10, 100, 100)', 'rgb(10, 100, 2)', 'rgb(120, 25, 170)']
+                                      backgroundColor: ['rgb(255, 99, 132)', 'rgb(50, 10, 100)', 'rgb(10, 100, 100)']
                                    }]
                         }
         })
@@ -57,9 +54,20 @@ export default class ChartCasamentoMes extends Component {
             <div>
                 <Container>
                 <input type="month" placeholder="Ex: 2020-08" onChange={this.handleMes} />
-                <Bar
+                <Doughnut
                   data={this.state.chartData}
-                  options={{ maintainAspectRatio: false }}
+                  options={{
+                      title: {
+                          display: true,
+                          text: 'Estilos Casamento',
+                          fontSize: 25
+                      },
+                      legend:{
+                          display: true,
+                          position:'top',
+
+                      }
+                  }}
                 />
                 </Container>
             </div>

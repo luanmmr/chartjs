@@ -33,12 +33,12 @@ export default class ChartUsuariosMes extends Component {
             chartData: {
                          labels: this.state.meses,
                          datasets: [{
-                                      label: 'Usuários Criados',
+                                      label: 'Usuários Cadastrados',
                                       data: mensais,
                                       backgroundColor: ['rgb(234,128,121,1)', 'rgb(104,191,183)', 'rgb(24,86,81)',
-                                                        'rgb(231,46,86)', 'rgb(154,14,222)', 'rgb(233,152,9)',
-                                                        'rgb(57,164,246)', 'rgb(255, 99, 132)', 'rgb(50, 10, 100)',
-                                                        'rgb(10, 100, 100)', 'rgb(10, 100, 2)', 'rgb(120, 25, 170)']
+                                                        'rgb(231,46,86)', 'rgb(234,128,121,1)', 'rgb(104,191,183)',
+                                                        'rgb(24,86,81)', 'rgb(231,46,86)', 'rgb(234,128,121,1)',
+                                                        'rgb(104,191,183)', 'rgb(24,86,81)', 'rgb(231,46,86)']
                                    }]
                         }
         })
@@ -64,7 +64,7 @@ export default class ChartUsuariosMes extends Component {
                       },
                       legend:{
                           display: true,
-                          position:'top',
+                          position:'top'
 
                       }
                   }}
