@@ -17,14 +17,14 @@ export default class ChartCasamentoMes extends Component {
     }
 
     async componentDidUpdate(){
-        let users = await api.get("/wedding").then(resp => resp.data);
+        let casamento = await api.get("/wedding").then(resp => resp.data);
         const { mes } = this.state;
         let estilo = [0, 0, 0];
-        users.map(user => {
-          if (moment(user.WEDDING_DATE).isSame(`${mes}`, 'month')){
-                if (user.STYLE == 'classico') {
+        casamento.map(csm => {
+          if (moment(csm.WEDDING_DATE).isSame(`${mes}`, 'month')){
+                if (csm.STYLE == 'classico') {
                     ++estilo[0];
-                }else if (user.STYLE == 'moderno') {
+                }else if (csm.STYLE == 'moderno') {
                     ++estilo[1];
                 } else {
                     ++estilo[2];
